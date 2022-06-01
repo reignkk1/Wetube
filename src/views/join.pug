@@ -1,0 +1,25 @@
+extends base
+
+block content 
+  h4=errorMsg
+  form(method='POST').join__form
+    input(name='username' type="text" required  placeholder='아이디')
+    input(name='password' type="password" required  placeholder='비밀번호')
+    input(name='password2' type="password" required  placeholder='비밀번호 확인')
+    input(name='name' type="text" required placeholder='이름' )
+    input(name='email' type="email" required  placeholder='이메일')
+    input(name='location' type="text" required placeholder='주소' )
+    button 가입하기
+
+    
+  div.form__a
+    span 당신은 계정을 갖고 있으십니까?       
+      a(href="/login") 로그인 &rarr;
+
+
+
+
+    
+
+
+

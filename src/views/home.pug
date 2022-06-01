@@ -1,0 +1,12 @@
+extends base.pug
+include mixins/video.pug
+
+
+block content 
+    div.video__grid
+        each videos in video
+            +video(videos)
+            
+        else 
+            span.error__msg 동영상을 찾을수 없습니다.
+    

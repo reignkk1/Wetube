@@ -1,0 +1,14 @@
+extends base
+include mixins/video
+
+block content 
+  form(method='GET').search__form
+    input(name='keyword' type="text" placeholder='제목을 입력해주세요.').search__input
+    button 
+      i.fas.fa-search
+  div.video__grid
+    each videos in video
+      +video(videos)
+    else 
+      span.error__msg 동영상을 찾을수 없습니다.
+    

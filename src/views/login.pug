@@ -1,0 +1,17 @@
+extends base 
+
+block content 
+  h4=errorMsg
+  form(method='POST').login__form
+    input(name='username' type="text" placeholder='아이디' required )
+    input(name='password' type="password" placeholder='비밀번호' required  )
+    button 로그인
+      
+    div.login__form__i
+      a(href="/users/github/start")
+        i.fab.fa-github  깃허브 로그인 &rarr;
+
+ 
+  div.form__a
+    span 당신은 계정이 없으신가요? 
+    a(href="/join") 회원가입 &rarr; 

@@ -1,0 +1,17 @@
+extends base 
+include mixins/video
+
+block content 
+  div.profile__data
+    if isHeroku
+      
+      img.avatar(src=User.avatarUrl width=120 height=155)
+    else  
+      img.avatar(src='/' + User.avatarUrl width=120 height=155)
+    h1=User.name
+  div.video__grid
+    each video in User.videos 
+      +video(video)
+
+    else 
+      li 업로드한 비디오가 없습니다!

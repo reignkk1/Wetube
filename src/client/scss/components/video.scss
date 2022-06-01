@@ -1,0 +1,28 @@
+//Video mixins
+.video__mixin {
+  .video__mixin__img {
+    display: block;
+    height: 200px;
+    width: 100%;
+    background-color: beige;
+    border-radius: 8px;
+  }
+  .video__mixin__data {
+    padding: 0 10px;
+    margin-top: 10px;
+    .video__mixin__title {
+      display: block;
+      font-weight: 600;
+    }
+    .video__mixin__meta {
+      span {
+        margin-bottom: 5px;
+      }
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,14 @@
+extends base.pug
+
+
+
+block content 
+  
+  form( method='POST')
+     label 새로운 제목
+     input(name='title' type="text" placeholder='새로운 제목' value=video.title required)
+     label 새로운 설명
+     input(name='description' type="text" placeholder='새로운 설명' value=video.description required)
+     label 새로운 태그
+     input(name='hashTags' type="text" placeholder='새로운 태그' value=video.hashTags.join() required)
+     button 저장

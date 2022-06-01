@@ -1,0 +1,24 @@
+.login__form {
+  justify-content: center;
+  padding: 20px;
+  height: 310px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  .login__form__i {
+    height: 50px;
+    background-color: $login_btn;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .login__form__i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

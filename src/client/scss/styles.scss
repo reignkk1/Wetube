@@ -1,0 +1,67 @@
+// Config
+@import "./config/_variable.scss";
+@import "./config/_reset.scss";
+
+//Components
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/video.scss";
+@import "./components/shared.scss";
+@import "./components/form.scss";
+@import "./components/controller.scss";
+@import "./components/comment.scss";
+
+//Screens
+@import "./screens/home.scss";
+@import "./screens/search.scss";
+@import "./screens/login.scss";
+@import "./screens/join.scss";
+@import "./screens/profile.scss";
+
+//Default
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $bg;
+  color: white;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+main {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  color: black;
+}
+
+@keyframes goAway {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.messages {
+  position: absolute;
+  max-width: 200px;
+  height: 30px;
+  background-color: tomato;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  animation: goAway 0.5s ease-in-out forwards;
+  animation-delay: 5s;
+}

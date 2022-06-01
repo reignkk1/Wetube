@@ -1,0 +1,61 @@
+extends base.pug
+
+
+
+block content 
+    div#videoContainer(data-id=video._id)
+        video.video(src=`${video.fileUrl}`)
+        
+        
+        div#controlls
+                div
+                    span#play
+                        i.fas.fa-play
+                div 
+                    span#currentTime 00:00
+                    span  /   
+                    span#totalTime 00:00
+                div 
+                    input#timeLine(type='range' ,step='1' ,value=0, min='0')
+                div  
+                    span#mute
+                        i.fas.fa-volume-up
+                    input#volume(type='range' ,step='0.1' ,value=05, min='0' ,max='1')
+                    span#fullScreen
+                        i.fas.fa-expand
+
+    div.videoInfo                   
+        h1=video.title
+        p=video.hashTags
+        p=`조회수 ${video.meta.views}`
+        p 영상을 올린 사람: 
+            a(href=`/users/${video.owner._id}`) #{video.owner.name} &rarr;
+        p=new Date(video.createdAt).toLocaleDateString('ko-KR')
+        if loggedInUser
+            if String(video.owner._id) === String(loggedInUser._id)
+                button
+                    a(href=`${video.id}/edit`) 비디오 수정
+                button
+                    a(href=`${video.id}/delete`) 비디오 삭제
+
+    if loggedIn
+        div.video__add-comments
+            form.video__comment-form#commentForm
+                textarea( cols="30", rows="10", placeholder='댓글을 입력해주세요.')#textarea
+                button 작성하기
+
+    div.video__comments
+        ul 
+            each comment in video.comments.reverse()
+                li.video__comment(data-comment=comment._id)
+                    i.fas.fa-comment
+                    span #{comment.text}
+                    if loggedInUser
+                        if String(comment.owner._id) === String(loggedInUser._id)
+                            button ❌
+
+
+block scripts 
+    script(src="/static/js/videoPlayer.js")
+    if loggedIn
+        script(src="/static/js/comment.js") 

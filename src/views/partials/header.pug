@@ -1,0 +1,35 @@
+header 
+    a(href="/").header__logo
+       i.fab.fa-youtube
+       span WeTube
+    nav 
+      ul 
+        li  
+          a(href="/search") 
+            i.fas.fa-search
+             
+
+        if loggedIn
+          li 
+            a(href="/users/logout") 로그아웃
+          li 
+            a(href=`/users/${loggedInUser._id}`) 나의 프로필
+              if loggedInUser.avatarUrl === ""
+                span 😀
+              else 
+                if isHeroku
+                  img.header__avatar(src=loggedInUser.avatarUrl width='20' height='20')
+                else 
+                  img.header__avatar(src="/"+loggedInUser.avatarUrl width='20' height='20')
+          li
+            a(href="/users/edit") 프로필 수정
+          li 
+            a(href="/videos/upload") 비디오 업로드
+          li  #{loggedInUser.name} 님 어서오세요!
+            
+
+        else
+          li 
+            a(href="/login").header__btn 로그인 
+          li 
+            a(href="/join").header__btn 회원가입 

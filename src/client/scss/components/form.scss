@@ -1,0 +1,41 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+input:not(input[type="range"]) {
+  font-size: 16px;
+  cursor: pointer;
+  height: 25px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+  &:focus {
+    outline: none;
+    border-color: $border_color;
+  }
+}
+button {
+  height: 50px;
+  background-color: $login_btn;
+  margin-top: 20px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form__a {
+  text-align: center;
+  margin-top: 50px;
+  a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+label {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+}

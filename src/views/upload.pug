@@ -1,0 +1,18 @@
+extends base.pug
+
+block content 
+  
+  if (errorMsg)
+    span=errorMsg
+  form(method='POST' enctype='multipart/form-data')
+    label(for='video') 비디오 파일
+    input(type="file" id='video' accept='video/*' required name='video')
+    label(for='thumb') 썸네일 사진 파일
+    input(type="file" id='thumb' accept='image/*' required name='thumb')
+    input(name='title' type='text' placeholder='비디오 제목' required ) 
+    input(name='description' type='text' placeholder='비디오 설명' required ) 
+    input(name='hashTags' type='text' placeholder='해쉬태그' required ) 
+    button 추가
+
+block scripts 
+  

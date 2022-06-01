@@ -1,0 +1,18 @@
+mixin video(info)
+    div.video__mixin
+      a.video__mixin__img(href=`/videos/${info.id}`)(style=`background-image:url(${info.thumbUrl});background-size:cover;background-position:center`)
+      
+      div.video__mixin__data
+        a.video__mixin__title(href=`/videos/${info.id}`) #{info.title}
+        div.video__mixin__meta
+          span #{info.owner.name} • 
+          span 조회수 #{info.meta.views} 회
+          
+        //ul 
+          each hashtag in info.hashTags
+            li=hashtag
+          
+          li 
+          hr
+      
+        

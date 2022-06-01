@@ -1,0 +1,13 @@
+.error__msg {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.video__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.avatar {
+  border-radius: 30px;
+}
